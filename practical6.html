@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <script>
+
+        function validateForm()
+        {
+            var name =
+            document.getElementById("name").value;
+
+            var email =
+            document.getElementById("email").value;
+
+            if(name == "")
+            {
+                alert("Name field cannot be empty");
+                return false;
+            }
+
+            if(email == "")
+            {
+                alert("Email field cannot be empty");
+                return false;
+            }
+
+            if(email.indexOf("@") == -1 ||
+               email.indexOf(".") == -1)
+            {
+                alert("Enter valid email");
+                return false;
+            }
+
+            alert("Form Submitted Successfully");
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body bgcolor="lightyellow">
+
+    <center>
+
+    <h1>Form Validation</h1>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Name:</label><br>
+        <input type="text" id="name">
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="text" id="email">
+        <br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    </center>
+
+</body>
+</html>
