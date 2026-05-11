@@ -1,55 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP Array Example</title>
-
-    <style>
-
-        body{
-            font-family: Arial;
-            background-color: #f4f4f4;
-            padding: 40px;
-        }
-
-        .box{
-            background-color: white;
-            width: 450px;
-            padding: 30px;
-            border-radius: 10px;
-            margin: auto;
-        }
-
-        h2{
-            color: blue;
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-<div class="box">
-
-    <h2>PHP Array Example</h2>
-
-<?php
-
-$students = array("Vaishnavi",
-                  "Rahul",
-                  "Sneha",
-                  "Amit");
-
-echo "<b>Student Names:</b><br><br>";
-
-foreach($students as $name)
-{
-    echo $name . "<br>";
+<title>PHP Arrays</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+padding: 40px;
+background-color: #f4f4f4;
 }
-
+h2 {
+color: #333;
+margin-bottom: 20px;
+}
+h3 {
+color: #0d6efd;
+margin: 28px 0 10px;
+font-size: 16px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+.result-box {
+background-color: #ffffff;
+padding: 28px 32px;
+border-radius: 8px;
+border: 1px solid #ddd;
+width: 480px;
+}
+.info-row {
+font-size: 15px;
+color: #333;
+margin-bottom: 8px;
+padding: 8px 14px;
+background-color: #f0f4ff;
+border-left: 4px solid #0d6efd;
+border-radius: 4px;
+}
+.info-row-green {
+font-size: 15px;
+color: #333;
+margin-bottom: 8px;
+padding: 8px 14px;
+background-color: #e9f7ef;
+border-left: 4px solid #2e7d32;
+border-radius: 4px;
+}
+.label {
+font-weight: bold;
+color: #444;
+}
+</style>
+</head>
+<body>
+<h2>PHP Array Operations</h2>
+<div class="result-box">
+<?php
+$students = ["Rahul Sharma", "Priya Mehta", "Arjun Patil", "Sneha Joshi",
+"Rohan Das"];
+echo "<h3>Indexed Array</h3>";
+foreach ($students as $index => $name) {
+echo "<div class='info-row'><span class='label'>[$index]: </span>" . $name
+. "</div>";
+}
+echo "<h3>Total Count</h3>";
+$total = count($students);
+echo "<div class='info-row'><span class='label'>Total Students (count):
+</span>" . $total . "</div>";
+echo "<h3>Sorted Array</h3>";
+sort($students);
+foreach ($students as $index => $name) {
+echo "<div class='info-row'><span class='label'>[$index]: </span>" . $name
+. "</div>";
+}
+echo "<h3>Associative Array — Student Details</h3>";
+$studentDetails = [
+"Name" => "Rahul Sharma",
+"Roll" => "CS2024001",
+"Branch" => "Computer Science",
+"Marks" => 88
+];
+foreach ($studentDetails as $key => $value) {
+echo "<div class='info-row-green'><span class='label'>" . $key . ": </span>"
+. $value . "</div>";
+}
+echo "<h3>After array_push()</h3>";
+array_push($students, "Kavita Nair");
+echo "<div class='info-row'><span class='label'>New Element Added:
+</span>Kavita Nair</div>";
+echo "<div class='info-row'><span class='label'>Updated Count: </span>" .
+count($students) . "</div>";
+echo "<h3>in_array() Check</h3>";
+$search = "Priya Mehta";
+if (in_array($search, $students)) {
+echo "<div class='info-row'><span class='label'>'" . $search . "' found in
+array: </span>Yes</div>";
+} else {
+echo "<div class='info-row'><span class='label'>'" . $search . "' found in
+array: </span>No</div>";
+}
+echo "<h3>implode()</h3>";
+$joined = implode(", ", $students);
+echo "<div class='info-row'><span class='label'>Joined String: </span>" .
+$joined . "</div>";
 ?>
-
 </div>
-
 </body>
 </html>
