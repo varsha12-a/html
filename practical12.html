@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Array Example</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        .box{
+            background-color: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        h2{
+            color: blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>PHP Array Example</h2>
+
+<?php
+
+$students = array("Vaishnavi",
+                  "Rahul",
+                  "Sneha",
+                  "Amit");
+
+echo "<b>Student Names:</b><br><br>";
+
+foreach($students as $name)
+{
+    echo $name . "<br>";
+}
+
+?>
+
+</div>
+
+</body>
+</html>
