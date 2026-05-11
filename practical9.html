@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome PHP Page</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        .box{
+            background-color: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        h1{
+            color: blue;
+        }
+
+        .row{
+            background-color: #eef3ff;
+            padding: 12px;
+            margin-top: 15px;
+            border-left: 5px solid blue;
+            color: black;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Welcome to PHP!</h1>
+
+    <div class="row">
+
+        <b>Date:</b>
+
+        <?php
+            echo date("d-m-Y");
+        ?>
+
+    </div>
+
+    <div class="row">
+
+        <b>Time:</b>
+
+        <span id="time">
+            <?php
+                echo date("h:i:s A");
+            ?>
+        </span>
+
+    </div>
+
+</div>
+
+<script>
+
+function updateTime()
+{
+    var now = new Date();
+
+    document.getElementById("time").innerHTML =
+    now.toLocaleTimeString();
+}
+
+setInterval(updateTime,1000);
+
+</script>
+
+</body>
+</html>
